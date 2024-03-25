@@ -74,9 +74,9 @@ public class Main {
     public static void menu() {
         System.out.println(ANSI_CYAN + "-----------------------------------------------------------------------------------------------------------");
         if (pantallaActual == 0) {
-            System.out.println("0 Salir | 1 TOP 3 | 2 Login | 3 Register");
+            System.out.println("0 Exit | 1 TOP 3 | 2 Login | 3 Register");
         } else {
-            System.out.println("0 Salir | 1 Mis Partidas | 2 Nueva Partida | 3 Reanudar Partida | 4 Otras Partidas | 5 Logout " + usuarioActual);
+            System.out.println("0 Exit | 1 My Games | 2 New Game | 3 Continue Game | 4 Other Games | 5 Logout " + usuarioActual);
         }
         System.out.println("-----------------------------------------------------------------------------------------------------------" + ANSI_RESET);
     }
@@ -236,7 +236,7 @@ public class Main {
         return partida(contador);
     }
     public static int[] reanudarpartida(int nivel) {
-        int contador = nivel;
+        int contador = nivel -1;
        return partida(contador);
     }
     public static int[] partida(int contador) {
@@ -251,17 +251,17 @@ public class Main {
             System.out.println("NIVEL: " + contador);
             operación = (int) (Math.random() * 4);
             if (contador < 10) {
-                num1 = (int) (Math.random() * 10);
-                num2 = (int) (Math.random() * 10);
+                num1 = (int) (Math.random() * 9)+1;
+                num2 = (int) (Math.random() * 9)+1;
             } else if (contador < 20) {
-                num1 = (int) (Math.random() * 20);
-                num2 = (int) (Math.random() * 20);
+                num1 = (int) (Math.random() * 19) +1;
+                num2 = (int) (Math.random() * 19)+1;
             } else if (contador < 30) {
-                num1 = (int) (Math.random() * 30);
-                num2 = (int) (Math.random() * 30);
+                num1 = (int) (Math.random() * 29)+1;
+                num2 = (int) (Math.random() * 29)+1;
             } else if (contador < 40) {
-                num1 = (int) (Math.random() * 40);
-                num2 = (int) (Math.random() * 40);
+                num1 = (int) (Math.random() * 39)+1;
+                num2 = (int) (Math.random() * 39)+1;
             }
             switch (operación) {
                 case 0:
